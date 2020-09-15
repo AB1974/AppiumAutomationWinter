@@ -1,8 +1,14 @@
 package com.cybertek.tests;
 
 
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.touch.TapOptions;
+import io.appium.java_client.touch.offset.ElementOption;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,6 +19,7 @@ import java.net.URL;
 public class CalculatorTests {
 
     AndroidDriver<AndroidElement> driver;
+    private final static Logger logger = Logger.getLogger(CalculatorTests.class);
 
     /**
      * {
@@ -47,6 +54,8 @@ public class CalculatorTests {
     @Test
     public void test1() {
         System.out.println("Test 1");
+            logger.info("Test 1");
+
 
         AndroidElement btn2 = driver.findElementById("com.android.calculator2:id/digit_2");
         AndroidElement equals = driver.findElementByAccessibilityId("equals");
@@ -61,6 +70,31 @@ public class CalculatorTests {
         String actualResult = result.getText();
 
         Assert.assertEquals("4", actualResult);
+    }
+
+    @Test
+    public void test2() {
+//        WebElement for everything
+//        MobileElement for IOS and Android
+//        AndroidElement only for android
+//        IOSElement only for ios elements
+        MobileElement btn7 = driver.findElement(MobileBy.id("com.android.calculator2:id/digit_7"));
+        MobileElement btn8 = driver.findElement(MobileBy.id("com.android.calculator2:id/digit_8"));
+//        MobileElement divide = driver.findElement(MobileBy.AccessibilityId("divide"));
+        MobileElement divide = driver.findElementByAccessibilityId("divide");
+        MobileElement result = driver.findElementById("com.android.calculator2:id/result");
+        MobileElement equals = driver.findElementByAccessibilityId("equals");
+        TouchAction touchActions = new TouchAction(driver);
+//        btn7.click();
+//        divide.click();
+//        btn8.click();
+//        equals.click();
+        touchActions.tap(new TapOptions().withElement(new ElementOption().withElement(btn7))).perform();
+        touchActions.tap(new TapOptions().withElement(new ElementOption().withElement(divide))).perform();
+        touchActions.tap(new TapOptions().withElement(new ElementOption().withElement(btn8))).perform();
+        touchActions.tap(new TapOptions().withElement(new ElementOption().withElement(equals))).perform();
+        String resultValue = result.getText();
+        logger.info("Result is: " + resultValue);
     }
 
 
