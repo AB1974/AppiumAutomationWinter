@@ -1,2 +1,11 @@
 2020-09-15 13:50:22 INFO  CalculatorTests:57 - Test 1
 2020-09-15 13:50:39 INFO  CalculatorTests:97 - Result is: 0.875
+2020-09-15 14:53:00 INFO  ChromeBrowserTest:29 - Google
+2020-09-15 14:56:12 INFO  ChromeBrowserTest:29 - Google
+2020-09-15 17:09:36 INFO  ChromeBrowserTest:29 - Google
+2020-09-15 17:38:45 INFO  ChromeBrowserTest:29 - Google
+2020-09-15 18:12:18 INFO  ChromeBrowserTest:29 - Google
+2020-09-15 18:18:39 INFO  Driver:26 - Running tests on: android
+2020-09-15 18:19:07 INFO  LoginPage:31 - Login with email: areatha@uspeakw.com
+2020-09-15 18:20:47 INFO  Driver:26 - Running tests on: android
+2020-09-15 18:21:03 INFO  LoginPage:31 - Login with email: areatha@uspeakw.com
