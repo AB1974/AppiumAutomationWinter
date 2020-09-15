@@ -40,7 +40,7 @@ public class CalculatorTests {
         desiredCapabilities.setCapability("automationName", "UiAutomator2");
         desiredCapabilities.setCapability("newCommandTimeout", "7200");
         desiredCapabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
-        driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), desiredCapabilities);
+        driver = new AndroidDriver<>(new URL("http://0.0.0:4723/wd/hub"), desiredCapabilities);
         //http://localhost:4723/wd/hub - appium server address
     }
 
@@ -63,8 +63,5 @@ public class CalculatorTests {
         Assert.assertEquals("4", actualResult);
     }
 
-    @After
-    public void tearDown(){
-        driver.closeApp();
-    }
+
 }
